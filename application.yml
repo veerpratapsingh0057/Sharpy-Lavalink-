@@ -6,7 +6,7 @@ lavalink:
   plugins:
     - dependency: "dev.lavalink.youtube:youtube-plugin:1.18.1"
       repository: "https://maven.lavalink.dev/releases"
-    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.8.3"
+    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.2.0"
       repository: "https://maven.lavalink.dev/releases"
 
   server:
@@ -63,23 +63,23 @@ plugins:
     providers:
       - "ytsearch:\"%ISRC%\""
       - "ytsearch:%QUERY%"
-      - "jssearch:%QUERY%"      # JioSaavn fallback
+      - "jssearch:%QUERY%"
     sources:
       spotify: true
-      applemusic: false         # Removed — needs paid token, skip for now
-      deezer: false             # Removed — blocked in India
-      jiosaavn: true            # India ✅
+      applemusic: false
+      deezer: false
+      jiosaavn: true
       soundcloud: true
       youtube: true
     spotify:
       clientId: "97995cbcfbcd41f9928cecc1a0f821a6"
       clientSecret: "1001c57dc3bc444a96f47f9d96c6f1e8"
-      countryCode: "IN"         # Fixed — IND is wrong, must be ISO alpha-2
+      countryCode: "IN"
       localFiles: false
       playlistLoadLimit: 10
       albumLoadLimit: 10
       resolveArtistsInSearch: true
-    jiosaavn: {}                # Works out of the box, no key needed
+    jiosaavn: {}
 
 sentry:
   dsn: ""
