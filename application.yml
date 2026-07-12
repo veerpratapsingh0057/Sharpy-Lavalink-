@@ -1,0 +1,105 @@
+server:
+  port: 443
+  address: 0.0.0.0
+
+lavalink:
+  plugins:
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.18.1"
+      repository: "https://maven.lavalink.dev/releases"
+    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.8.3"
+      repository: "https://maven.lavalink.dev/releases"
+
+  server:
+    password: "sharpymusic@12"
+    sources:
+      youtube: false
+      bandcamp: true
+      soundcloud: true
+      twitch: true
+      vimeo: true
+      http: true
+      local: false
+    filters:
+      volume: true
+      equalizer: true
+      karaoke: true
+      timescale: true
+      tremolo: true
+      vibrato: true
+      distortion: true
+      rotation: true
+      channelMix: true
+      lowPass: true
+    bufferDurationMs: 400
+    frameBufferDurationMs: 5000
+    opusEncodingQuality: 5
+    resamplingQuality: HIGH
+    trackStuckThresholdMs: 10000
+    useSeekGhosting: true
+    youtubePlaylistLoadLimit: 6
+    gcWarnings: true
+    playerUpdateInterval: 5
+    readTimeout: 60000
+    requestTimeout: 60000
+
+plugins:
+  youtube:
+    enabled: true
+    allowSearch: true
+    allowDirectVideoIds: true
+    allowDirectPlaylistIds: true
+    clients:
+      - MUSIC
+      - ANDROID_VR
+      - ANDROID
+      - TVHTML5_SIMPLY
+      - TV
+    oauth:
+      enabled: false
+      # refreshToken: "paste your refresh token here"
+      # skipInitialization: true
+
+  lavasrc:
+    providers:
+      - "ytsearch:\"%ISRC%\""
+      - "ytsearch:%QUERY%"
+      - "jssearch:%QUERY%"      # JioSaavn fallback
+    sources:
+      spotify: true
+      applemusic: false         # Removed — needs paid token, skip for now
+      deezer: false             # Removed — blocked in India
+      jiosaavn: true            # India ✅
+      soundcloud: true
+      youtube: true
+    spotify:
+      clientId: "97995cbcfbcd41f9928cecc1a0f821a6"
+      clientSecret: "1001c57dc3bc444a96f47f9d96c6f1e8"
+      countryCode: "IN"         # Fixed — IND is wrong, must be ISO alpha-2
+      localFiles: false
+      playlistLoadLimit: 10
+      albumLoadLimit: 10
+      resolveArtistsInSearch: true
+    jiosaavn: {}                # Works out of the box, no key needed
+
+sentry:
+  dsn: ""
+  environment: ""
+
+logging:
+  file:
+    path: ./logs/
+  level:
+    root: INFO
+    lavalink: INFO
+    dev.lavalink.youtube.http.YoutubeOauth2Handler: INFO
+  request:
+    enabled: true
+    includeClientInfo: true
+    includeHeaders: false
+    includePayload: true
+    includeQueryString: true
+    maxPayloadLength: 10000
+  logback:
+    rollingPolicy:
+      maxFileSize: 1GB
+      maxHistory: 30
