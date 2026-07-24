@@ -56,7 +56,7 @@ plugins:
       - TV
     oauth:
       enabled: true 
-     # refreshToken: "paste your refreh token here"
+     # refreshToken: "1//06S84qb5ZRhGBCgYIARAAGAYSNwF-L9IrTGz2PggS7ev4YND5njB3Gy81gtGD5BWQSVzvfPSQ30E_JbkQo0M8Y2-Vq6TdNUmpP4Q"
     #  skipInitialization: false
 
   lavasrc:
