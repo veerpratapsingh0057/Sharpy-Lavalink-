@@ -55,7 +55,7 @@ plugins:
       - TVHTML5_SIMPLY
       - TV
     oauth:
-      enabled: false
+      enabled: true 
      # refreshToken: "paste your refreh token here"
     #  skipInitialization: false
 
