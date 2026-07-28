@@ -56,7 +56,7 @@ plugins:
       - TV
     oauth:
       enabled: true 
-     # refreshToken: "1//06N7b2TyHkoqcCgYIARAAGAYSNgF-L9IrWEz6Y_Wp-cHXjnY0mcBrN7QSFf3QqTvX7EwlcWZlZywtUNF2vxrSj_tzfXfRjiXv0g"
+     # refreshToken: "1//06utIk63s6ugrCgYIARAAGAYSNwF-L9Ir3IbB1LwfCjwNYD3bkT95EaFad97PQivoyB0cNYMJOkpvxcSfbYbbksE4xep81NYixpw"
     #  skipInitialization: false
 
   lavasrc:
